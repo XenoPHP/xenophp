@@ -13,6 +13,25 @@ require __DIR__ . '/vendor/autoload.php';
 /** @var Application $app */
 $app = require_once __DIR__ . '/bootstrap/app.php';
 
+// Handle custom loop logic for "php xeno serve"
+if (isset($_SERVER['argv'][1]) && $_SERVER['argv'][1] === 'serve') {
+    // Check if we are already running via npm (using the flag)
+    $internalIndex = array_search('--internal-process', $_SERVER['argv']);
+
+    if ($internalIndex === false) {
+        // We are NOT inside npm run dev yet. Start it.
+        // Use passthru to show output directly to user.
+        passthru('npm run dev', $returnVar);
+        exit($returnVar);
+    } else {
+        // We ARE inside npm run dev (flag found).
+        // Remove the flag so Laravel doesn't complain
+        unset($_SERVER['argv'][$internalIndex]);
+        // Re-index array just in case
+        $_SERVER['argv'] = array_values($_SERVER['argv']);
+    }
+}
+
 $status = $app->handleCommand(new ArgvInput);
 
 exit($status);
