@@ -11,6 +11,16 @@ security:
     rules:
       - { path: ^/admin, roles: ROLE_ADMIN }
 
+  # New Powerful Security Features
+  honeypot:
+    enabled: true
+    field_name: "xeno_honey" # If this field is filled, request is blocked
+
+  headers:
+    hsts: "max-age=31536000; includeSubDomains"
+    csp: "default-src 'self' 'unsafe-inline' 'unsafe-eval' data:; connect-src 'self' ws:;"
+    x_frame: "SAMEORIGIN"
+
 optimization:
   cache_driver: "file"
   monitor: true
