@@ -1,0 +1,16 @@
+# XenoPHP Powerful Configuration
+# This file mimics Symfony's configuration style.
+
+app:
+  name: "XenoPHP Application"
+  power_mode: true
+
+security:
+  firewall:
+    enabled: true
+    rules:
+      - { path: ^/admin, roles: ROLE_ADMIN }
+
+optimization:
+  cache_driver: "file"
+  monitor: true

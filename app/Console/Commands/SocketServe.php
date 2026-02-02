@@ -13,7 +13,7 @@ class SocketServe extends Command
      *
      * @var string
      */
-    protected $signature = 'socket:serve';
+    protected $signature = 'socket:serve {action=start}';
 
     /**
      * The console command description.
@@ -27,6 +27,10 @@ class SocketServe extends Command
      */
     public function handle()
     {
+        global $argv;
+        $argv[0] = 'socket:serve';
+        $argv[1] = $this->argument('action');
+
         $this->info("Socket.io server running on port 3000");
 
         // Listen on port 3000

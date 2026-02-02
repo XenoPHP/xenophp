@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\AccessLog;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class LogActivity
 {
@@ -27,8 +28,15 @@ class LogActivity
                 'user_agent' => $request->userAgent(),
                 'user_id' => Auth::id(),
             ]);
+            // Log to Power Channel for high-level tracking
+            Log::channel('power')->info('Route Accessed', [
+                'ip' => $request->ip(),
+                'route' => $request->path(),
+                'user' => Auth::id() ?? 'Guest'
+            ]);
         } catch (\Exception $e) {
-            // Silently fail to avoid breaking the app if logging fails
+            // Log failure to Power Channel
+            Log::channel('power')->warning('Access Log Failure: ' . $e->getMessage());
         }
 
         return $response;
