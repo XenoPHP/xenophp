@@ -58,6 +58,13 @@ return [
             'ignore_exceptions' => false,
         ],
 
+        'power' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/power.log'),
+            'level' => 'debug',
+            'days' => 14,
+        ],
+
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/xenophp.log'),
