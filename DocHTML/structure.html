@@ -77,7 +77,12 @@
           services. This page details the purpose of each directory and key file.</p>
 
         <div class="structure-tree">
-          <div><span class="folder">app/</span> <span class="desc">Core application code (Controllers, Models)</span>
+          <div><span class="folder">app/</span> <span class="desc">Application Logic</span></div>
+          <div class="indent">
+            <div><span class="folder">Core/</span> <span class="desc">Framework Core (Console, Providers, Routes)</span>
+            </div>
+            <div><span class="folder">Http/</span> <span class="desc">Controllers ("C")</span></div>
+            <div><span class="folder">Models/</span> <span class="desc">Models ("M")</span></div>
           </div>
           <div><span class="folder">bootstrap/</span> <span class="desc">Framework bootstrapper</span></div>
           <div><span class="folder">config/</span> <span class="desc">Application configuration files</span></div>
@@ -104,20 +109,19 @@
         <h3 class="section__title">Core Directories</h3>
 
         <h4>app/</h4>
-        <p>The heart of your application. It contains:</p>
+        <p>The heart of your application, split into Logic and Core:</p>
         <ul>
-          <li><strong>Console/</strong>: Custom CLI commands (like <code>ServeInterceptor</code>).</li>
+          <li><strong>Core/</strong>: Framework components (Console, Helpers, Providers, Routes, Traits).</li>
           <li><strong>Http/Controllers/</strong>: The "C" in MC. Handles incoming API requests.</li>
           <li><strong>Models/</strong>: The "M" in MC. Database interactions and logic.</li>
-          <li><strong>Providers/</strong>: Service providers that bootstrap application services.</li>
         </ul>
 
         <h4>routes/</h4>
-        <p>Contains your route definitions. In XenoPHP (Backend Mode), we strictly use <code>api.php</code>.</p>
+        <p>Contains your API route definitions.</p>
         <ul>
           <li><strong>api.php</strong> - Defines API endpoints (JSON responses).</li>
-          <li><s>web.php</s> - Removed (Views are disabled in MC mode).</li>
         </ul>
+        <p><em>Note: Internal routes (console, web fallbacks) are located in <code>app/Core/Routes</code>.</em></p>
 
         <h4>database/</h4>
         <ul>
