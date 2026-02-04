@@ -25,9 +25,6 @@
                         <h1 class="display-3 fw-bold mb-4 text-dark">
                             Welcome to XenoPHP
                         </h1>
-                        <p class="lead text-secondary mb-5">
-                            100% Backend Driver Framework
-                        </p>
                     </main>
 
                     <footer class="mt-5 py-4 text-muted border-top">
