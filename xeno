@@ -3,7 +3,7 @@
 
 use Illuminate\Foundation\Application;
 use Symfony\Component\Console\Input\ArgvInput;
-use App\Console\ServeInterceptor;
+use App\Core\Console\ServeInterceptor;
 
 define('XENOPHP_START', microtime(true));
 
