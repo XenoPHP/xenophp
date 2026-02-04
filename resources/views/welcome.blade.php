@@ -8,7 +8,7 @@
     <!-- Bootstrap 5 CSS (Local) -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <!-- Fonts (Local handling omitted for simplicity, using system fonts fallback) -->
+    <!-- Fonts -->
     <style>
         body {
             font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -25,11 +25,13 @@
                         <h1 class="display-3 fw-bold mb-4 text-dark">
                             Welcome to XenoPHP
                         </h1>
+                        <p class="lead text-secondary mb-4">
+                            Combining the strengths of Laravel, CakePHP, Symfony, and CodeIgniter into a single, powerful backend framework.
+                            <div class="small">
+                             <span class="d-block d-md-inline mx-2">PHP v{{ $phpVersion }}</span>
+                        </div>
+                        </p>
                     </main>
-
-                    <footer class="mt-5 py-4 text-muted border-top">
-                        <small>XenoPHP v1 (Laravel v{{ $laravelVersion }} (PHP v{{ $phpVersion }}))</small>
-                    </footer>
                 </div>
             </div>
         </div>
