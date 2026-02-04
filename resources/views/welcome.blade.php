@@ -4,29 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>XenoPHP</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
-    <!-- Styles/Scripts -->
+    <!-- Bootstrap 5 CSS (Local) -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Fonts (Local handling omitted for simplicity, using system fonts fallback) -->
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+    </style>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased font-sans bg-gray-50 dark:bg-[#0f172a] text-black dark:text-white">
-    <div class="min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-        <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-    
-            <main class="mt-6">
-                <div class="text-center">
-                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-6xl">
-                        Welcome to XenoPHP
-                    </h1>
-                </div>
-            </main>
+<body class="bg-light text-dark antialiased">
+    <div class="min-vh-100 d-flex flex-column align-items-center justify-content-center selection-primary">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <main class="mt-5">
+                        <h1 class="display-3 fw-bold mb-4 text-dark">
+                            Welcome to XenoPHP
+                        </h1>
+                        <p class="lead text-secondary mb-5">
+                            100% Backend Driver Framework
+                        </p>
+                    </main>
 
-            <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                XenoPHP v1 (Laravel v{{ $laravelVersion }} (PHP v{{ $phpVersion }}))
-            </footer>
+                    <footer class="mt-5 py-4 text-muted border-top">
+                        <small>XenoPHP v1 (Laravel v{{ $laravelVersion }} (PHP v{{ $phpVersion }}))</small>
+                    </footer>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Bootstrap 5 JS Bundle (Local) -->
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
