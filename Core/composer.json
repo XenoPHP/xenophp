@@ -1,0 +1,25 @@
+{
+  "name": "xenophp/xenophp",
+  "description": "Framework for XenoPHP Composer",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Asadullah Nadeem",
+      "homepage": "https://github.com/Asadullah-nadeem",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "docs": "https://in.linkedin.com/in/asadullah-nadeem",
+    "source": "https://github.com/Asadullah-nadeem"
+  },
+  "require": {
+    "php": ">=8.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core\\": ""
+    }
+  }
+}
