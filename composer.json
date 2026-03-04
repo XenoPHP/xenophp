@@ -1,6 +1,6 @@
 {
   "$schema": "https://getcomposer.org/schema.json",
-  "name": "xenophp/app",
+  "name": "xenophp/xenophp",
   "type": "project",
   "description": "The XenoPHP Framework.",
   "keywords": [
